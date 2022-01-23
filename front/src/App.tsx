@@ -1,38 +1,40 @@
 import React from 'react'
 import './App.css'
+import './styles/common.css'
 import { Navigate, useRoutes } from 'react-router-dom'
-import { Post } from './components/post'
-import { Post2 } from './components/post2'
-import PageNotFoundView from './components/pages/PageNotFoundView'
-import { PostIndex } from './components/pages/postIndex'
+// Auth
+import AuthMain from './components/pages/auth/AuthMain'
+import LoginView from './components/pages/auth/LoginView'
+import SignupView from './components/pages/auth/SignupView'
+// ChatSpace
+import ChatSpaceMain from './components/pages/chatSpace/ChatSpaceMain'
+import ChatSpaceView from './components/pages/chatSpace/ChatSpaceView'
+// NotFound
+import NotFound from './components/pages/error/NotFound'
 
 function App () {
-  const mainRoutes = {
-    path: '/',
-    element: <PostIndex />,
+  const authRoutes = {
+    path: 'auth',
+    element: <AuthMain />,
     children: [
       { path: '*', element: <Navigate to='/404' /> },
-      { path: '/', element: <Post /> },
-      { path: 'post', element: <Post /> },
-      { path: 'post2', element: <Post2 /> },
-      { path: '404', element: <PageNotFoundView /> },
-      { path: 'account', element: <Navigate to='/account/list' /> }
+      { path: '', element: <Navigate to='/auth/login' /> },
+      { path: 'login', element: <LoginView /> },
+      { path: 'signup', element: <SignupView /> },
+      { path: '404', element: <NotFound /> }
+    ]
+  }
+  const chatSpaceRoutes = {
+    path: 'chat_space',
+    element: <ChatSpaceMain />,
+    children: [
+      { path: '*', element: <Navigate to='/404' /> },
+      { path: '', element: <ChatSpaceView/> },
+      { path: '404', element: <NotFound /> }
     ]
   }
 
-  // const accountRoutes = {
-  //   path: 'account',
-  //   element: <AccountLayout />,
-  //   children: [
-  //     {path: '*', element: <Navigate to='/404' />},
-  //     {path: ':id', element: <AccountDetailView />},
-  //     {path: 'add', element: <AccountAddView />},
-  //     {path: 'list', element: <AccountListView />},
-  //   ],
-  // };
-
-  // const routing = useRoutes([mainRoutes, accountRoutes]);
-  const routing = useRoutes([mainRoutes])
+  const routing = useRoutes([authRoutes, chatSpaceRoutes])
 
   return <>{routing}</>
 }

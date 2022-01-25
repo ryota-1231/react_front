@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import 'styled-components/macro'
 import googleIcon from '../../../assets/images/icons/google_icon_01.png'
 import twitterIcon from '../../../assets/images/icons/twitter_icon_01.png'
 import lineIcon from '../../../assets/images/icons/line_icon_01.png'
+import Color from '../../../styles/const/Color'
+import Size from '../../../styles/const/Size'
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,24 +26,21 @@ const MailContents = styled.div`
     background-color: #d4d4d4;
   }
 `
-const InputContent = styled.div`
-  margin-bottom: 30px;
-`
 const Label = styled.label`
   display: block;
-  font-size: 16px;
+  font-size: ${Size.FONT.S};
 `
 const Input = styled.input`
-  border: 1px solid #b9b9b9;
-  border-radius: 4px;
+  border: 1px solid ${Color.BORDER};
+  border-radius: ${Size.BORDER_RADIUS};
   height: 30px;
   width: 100%;
 `
 const Button = styled.button`
   width: 100%;
   border: none;
-  font-size: 18px;
-  border-radius: 4px;
+  font-size: ${Size.FONT.M};
+  border-radius: ${Size.BORDER_RADIUS};
   height: 46px;
   &:hover {
     cursor: pointer;
@@ -52,10 +52,10 @@ const LoginLink = styled(Link)`
   width: 100%;
 `
 const LoginButton = styled(Button)`
-  background-color: #2587c0;
+  background-color: ${Color.PRIMARY};
   color: #fff;
   &:hover {
-    background-color: #2587c0ea;
+    background-color: ${Color.PRIMARY_HOVER};
   }
 `
 const LinkContent = styled.div`
@@ -63,8 +63,8 @@ const LinkContent = styled.div`
   text-align: center;
 `
 const PasswordForgetLink = styled(Link)`
-  font-size: 14px;
-  color: #2587c0;
+  font-size: ${Size.FONT.SS};
+  color: ${Color.PRIMARY};
 `
 const SnsContents = styled.div`
   width: 50%;
@@ -77,7 +77,7 @@ const ButtonContent = styled.div`
 `
 const GoogleButton = styled(Button)`
   background-color: #fff;
-  border: 1px solid #b9b9b9;
+  border: 1px solid ${Color.BORDER};
 `
 const TwitterButton = styled(Button)`
   background-color: #159cf0;
@@ -90,7 +90,7 @@ const LineButton = styled(Button)`
 const Image = styled.img`
   width: 46px;
   height: 46px;
-  border-radius: 4px;
+  border-radius: ${Size.BORDER_RADIUS};
   position: absolute;
   top: 0;
   left: 0;
@@ -106,14 +106,14 @@ export default function LoginView () {
   return (
     <Wrapper>
       <MailContents>
-        <InputContent>
+        <div css={'margin-bottom: 30px;'}>
           <Label>メールアドレス</Label>
           <Input type='text'></Input>
-        </InputContent>
-        <InputContent>
+        </div>
+        <div css={'margin-bottom: 30px;'}>
           <Label>パスワード</Label>
           <Input type='text'></Input>
-        </InputContent>
+        </div>
         <div>
           <LoginLink to={'/chat_space'}>
             <LoginButton>ログイン</LoginButton>

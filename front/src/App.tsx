@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import './styles/common.css'
+// v6
 import { Navigate, useRoutes } from 'react-router-dom'
 // Auth
 import AuthMain from './components/pages/auth/AuthMain'

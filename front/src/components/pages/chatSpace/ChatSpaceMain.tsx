@@ -1,29 +1,22 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
+import 'styled-components/macro'
+import Color from '../../../styles/const/Color'
+import ChatSpaceSidebar from './ChatSpaceSidebar'
 
-const Wrapper = styled.div`
-  height: 100vh;
-  display: flex;
-`
 const Sidebar = styled.div`
-  width: 280px;
-  background-color: #2587c0;
-`
-const MainContents = styled.div`
-  width: calc(100vw - 280px);
-  background-color: #fff;
+  width: 200px;
+  background-color: ${Color.PRIMARY};
 `
 
 export default function ChatSpaceMain () {
   return (
-    <Wrapper>
+    <div css={'display: flex;'}>
       <Sidebar>
-        sidebar
+        <ChatSpaceSidebar/>
       </Sidebar>
-      <MainContents>
-        <Outlet />
-      </MainContents>
-    </Wrapper>
+      <Outlet />
+    </div>
   )
 }

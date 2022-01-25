@@ -1,9 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
+import Color from '../../../styles/const/Color'
+import Size from '../../../styles/const/Size'
 
 const Wrapper = styled.div`
-  background-color: #e6e6e6;
+  background-color: ${Color.SECONDLY};
   height: 100vh;
 `
 const MainContents = styled.div`
@@ -12,7 +14,7 @@ const MainContents = styled.div`
   padding-top: 24px;
 `
 const Title = styled.p`
-  font-size: 24px;
+  font-size: ${Size.FONT.L};
   font-weight: bold;
   word-spacing: 2rem;
   text-align: center;

@@ -1,35 +1,71 @@
 import React from 'react'
 import styled from 'styled-components'
+import ChatSpaceMessagePostView from './ChatSpaceMessagePost'
 
-const Wrapper = styled.div`
-  height: 100vh;
-`
 const MainContents = styled.div`
-  width: 60%;
-  margin: 0 auto;
-  padding-top: 24px;
+  height: 100vh;
+  width: calc(100vw - 200px);
+  position: relative;
 `
-const Title = styled.p`
-  font-size: 24px;
-  font-weight: bold;
-  word-spacing: 2rem;
-  text-align: center;
-`
-const Content = styled.div`
+const MessageDisplayContents = styled.div`
   background-color: #fff;
+  height: calc(100vh - 180px);
   width: 100%;
   margin: 0 auto;
+  overflow: auto;
+`
+const MessagePostContents = styled.div`
+  height: 180px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 `
 
-export default function ChatSpaceMain () {
+export default function ChatSpaceMessageView () {
   return (
-    <Wrapper>
+    <div>
       <MainContents>
-        <Title>Chat</Title>
-        <Content>
-          view
-        </Content>
+        <MessageDisplayContents>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message area</div>
+          <div>message iiiiiiii area</div>
+        </MessageDisplayContents>
+        <MessagePostContents>
+          <ChatSpaceMessagePostView/>
+        </MessagePostContents>
       </MainContents>
-    </Wrapper>
+    </div>
   )
 }

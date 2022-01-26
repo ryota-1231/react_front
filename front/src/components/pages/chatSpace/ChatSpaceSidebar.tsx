@@ -34,7 +34,7 @@ export default function ChatSpaceSidebar () {
           <Channel>チャンネル3</Channel>
         </div>
         <ChannelRegister>
-          <Link to={'/auth'}>＋チャンネル登録</Link>
+          <Link to={'/user/group'}>＋チャンネル登録</Link>
         </ChannelRegister>
       </div>
     </div>

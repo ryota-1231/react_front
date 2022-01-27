@@ -21,3 +21,52 @@ styled-components/macro を import する。
 > import 'styled-components/macro'
 
 > × import styled from 'styled-components/macro'
+
+## ディレクトリ構成
+
+├── front
+│ 　 ├── components
+│ 　 │ 　 ├── pages
+│ 　 │ 　 │ 　 └── [PageName]
+│ 　 │ 　 │ 　　　　 ├── index.tsx
+│ 　 │ 　 │ 　　　　 ├── index.test.tsx
+│ 　 │ 　 │ 　　　　 ├── hooks.test.tsx
+│ 　 │ 　 │ 　　　　 ├── hooks.ts
+│ 　 │ 　 │ 　　　　 ├── presenter.test.tsx
+│ 　 │ 　 │ 　　　　 ├── presenter.tsx
+│ 　 │ 　 │ 　　　　 └── [Component Name]/
+│ 　 │ 　 ├── projects
+│ 　 │ 　 └── uiParts
+│ 　 │ 　　　 ├── [Component Name]
+│ 　 │ 　　　 │ 　 ├── index.stories.tsx
+│ 　 │ 　　　 │ 　 ├── index.tsx
+│ 　 │ 　　　 │ 　 ├── presenter.test-d.tsx
+│ 　 │ 　　　 │ 　 ├── presenter.test.tsx
+│ 　 │ 　　　 │ 　 ├── presenter.tsx
+│ 　 │ 　　　 │ 　 └── style.tsx
+│ 　 ├── contexts
+│ 　 ├── ducks
+│ 　 ├── hooks
+│ 　 ├── styles
+│ 　 ├── types
+│ 　 └── utils
+
+### front/components/pages/[PageName]/index.tsx
+
+page/template の Container 層。ロジックを管理する。
+
+### front/components/pages/[PageName]/presenter.tsx
+
+page/template の Presentation 層。UI を管理する。
+
+### front/components/pages/[PageName]/[Component Name]
+
+[PageName]の独自 Component。organisms 層。
+
+### front/components/projects/
+
+共通で使用する organisms 層の component。
+
+### front/components/uiParts
+
+atoms/molecules 層の汎用 component。storybook を使用。
